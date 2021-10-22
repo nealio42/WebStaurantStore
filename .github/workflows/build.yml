@@ -25,7 +25,9 @@ jobs:
           version: '11'
 
       - name: Setup Chrome
-        uses: browser-actions/setup-chrome@stable
+        uses: browser-actions/setup-chrome@latest
+        with:
+          chrome-version: stable
 
       - name: Make gradlew executable
         run: chmod +x ./gradlew
