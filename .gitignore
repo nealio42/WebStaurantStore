@@ -2,7 +2,6 @@
 *.iml
 /target/
 /out/
-/lib
 /build/
 /.gradle/
 /bin
