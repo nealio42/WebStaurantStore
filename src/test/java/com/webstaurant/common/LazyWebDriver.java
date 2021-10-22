@@ -12,10 +12,10 @@ import java.util.Set;
 public class LazyWebDriver implements WebDriver, Disposable {
 
     private WebDriver delegate = null;
-
+    
     private WebDriver getDelegate() {
         if (delegate == null) {
-            System.setProperty("webdriver.chrome.driver", "lib/chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "lib/chromedriver.sh");
             delegate = new ChromeDriver();
         }
         return delegate;
