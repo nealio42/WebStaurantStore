@@ -16,7 +16,7 @@ public class LazyWebDriver implements WebDriver, Disposable {
 
     private WebDriver getDelegate() {
         if (delegate == null) {
-            System.setProperty("webdriver.chrome.driver", "lib/chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "lib/chromedriver");
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--no-sandbox"); // Bypass OS security model
             options.addArguments("--headless"); // headless
