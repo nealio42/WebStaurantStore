@@ -25,6 +25,8 @@ jobs:
           version: '11'
       - name: Make gradlew executable
         run: chmod +x ./gradlew
+      - name: Make chromedriver executable
+        run: chmod +x ./lib/chromedriver
       - name: test gradle
         run: ./gradlew cucumber || true
 
