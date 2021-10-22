@@ -23,6 +23,8 @@ jobs:
           AdoptOpenJDK/install-jdk@v1
         with:
           version: '11'
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
       - name: test gradle
         run: ./gradlew cucumber || true
       - run: grep -q "The step 'I wait 1 hour' and 1 other step(s) are undefined." build/reports/tests/test/classes/io.cucumber.skeleton.RunCucumberTest.html  || ( echo "gradle test didn't fail as expected" && false )
