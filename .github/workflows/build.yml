@@ -25,12 +25,12 @@ jobs:
           version: '11'
 
       - name: Setup Chrome
-        uses: browser-actions/setup-chrome@v95.0.4638.0
+        uses: browser-actions/setup-chrome@stable
 
       - name: Make gradlew executable
         run: chmod +x ./gradlew
       - name: Make chromedriver executable
         run: chmod +x lib/chromedriver
       - name: test gradle
-        run: ./gradlew cucumber || true
+        run: ./gradlew cucumber || false
 
