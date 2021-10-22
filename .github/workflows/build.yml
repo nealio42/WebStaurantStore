@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    name: 'Build'
+    name: 'Test'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -23,9 +23,6 @@ jobs:
           AdoptOpenJDK/install-jdk@v1
         with:
           version: '11'
-      - name: test maven
-        run: ./mvnw test -Dmaven.test.failure.ignore
-      - run: grep -q "The step 'I wait 1 hour' and 1 other step(s) are undefined." target/surefire-reports/io.cucumber.skeleton.RunCucumberTest.txt || ( echo "mvn test didn't fail as expected" && false )
-      - name: test gradle
-        run: ./gradlew test || true
+
+        run: ./gradlew cucumber || true
       - run: grep -q "The step 'I wait 1 hour' and 1 other step(s) are undefined." build/reports/tests/test/classes/io.cucumber.skeleton.RunCucumberTest.html  || ( echo "gradle test didn't fail as expected" && false )
